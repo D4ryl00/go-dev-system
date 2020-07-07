@@ -1,0 +1,3 @@
+# <ip>:<port> ansible_user=<user>
+# example
+192.168.1.30:62222 ansible_user=d4ryl00
