@@ -1,1 +1,4 @@
 hosts
+vault*
+!vault.source.yml.example
+.vault_password
