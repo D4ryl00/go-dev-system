@@ -1,3 +1,6 @@
 ---
 - name: Install golang
-  apt: name=golang-go state=present
+  apt:
+    name: golang-go
+    state: latest
+  become: yes

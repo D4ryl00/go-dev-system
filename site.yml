@@ -1,7 +1,8 @@
 ---
 - name: Install a tooling system targeted for Golang developpement
   hosts: all
-  become: yes
 
   roles:
+    - common
     - golang
+    - vim

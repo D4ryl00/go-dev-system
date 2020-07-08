@@ -1,0 +1,37 @@
+---
+- name: Install vim
+  apt:
+    name: vim
+    state: latest
+  become: yes
+
+- name: create vim directory
+  file:
+    path: ~/.vim
+    state: directory
+
+- name: copy .vimrc
+  copy: src=.vimrc dest=~/.vim/.vimrc
+
+- name: "install vim plugin: vim-go"
+  git:
+    repo: https://github.com/fatih/vim-go.git
+    dest: ~/.vim/pack/plugins/start/vim-go
+
+- name: "install vim plugin: nerdtree"
+  git:
+    repo: https://github.com/scrooloose/nerdtree.git
+    dest: ~/.vim/pack/dist/start/nerdtree
+
+- name: "install vim plugin: vim-airline"
+  git:
+    repo: https://github.com/vim-airline/vim-airline
+    dest: ~/.vim/pack/dist/start/vim-airline
+
+- name: "install vim plugin: vim-fugitive"
+  git:
+    repo: https://github.com/tpope/vim-fugitive.git
+    dest: ~/.vim/pack/dist/start/vim-fugitive
+
+- name: "finish vim plugin installation"
+  command: vim -c GoInstallBinaries -c q
