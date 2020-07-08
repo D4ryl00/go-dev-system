@@ -2,8 +2,14 @@
 - name: Update packages
   apt:
     update_cache: yes
+    cache_valid_time: 3600
+  become: yes
+
+- name: Upgrade dist
+  apt:
     upgrade: dist
   become: yes
+  notify: reboot system
 
 - name: Install git
   apt:
@@ -13,3 +19,6 @@
 
 - name: "Copy .bash_profile"
   copy: src=.bash_profile dest=~/.bash_profile
+
+- name: "Copy .tmux"
+  copy: src=.tmux.conf dest=~/.tmux.conf

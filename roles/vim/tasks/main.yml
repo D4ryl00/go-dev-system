@@ -35,3 +35,4 @@
 
 - name: "finish vim plugin installation"
   command: vim -c GoInstallBinaries -c q
+  changed_when: False
