@@ -13,7 +13,7 @@
 
 - name: Install git
   apt:
-    name: ['git-all', 'tmux']
+    name: ['git-all', 'tmux', 'docker', 'docker-compose']
     state: latest
   become: yes
 
@@ -22,3 +22,10 @@
 
 - name: "Copy .tmux"
   copy: src=.tmux.conf dest=~/.tmux.conf
+
+- name: add user to the docker group
+  user:
+    name: "{{ ansible_user }}"
+    groups: docker
+    append: yes
+  become: yes

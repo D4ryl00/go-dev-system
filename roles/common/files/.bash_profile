@@ -6,7 +6,7 @@
 
 # Golang
 export GOPATH=$HOME/go
-PATH=$PATH:$GOPATH/bin
+PATH=$PATH:/usr/lib/go-1.14/bin:$GOPATH/bin
 
 # tmux auto attach
 if [ -z "$TMUX" ]; then
