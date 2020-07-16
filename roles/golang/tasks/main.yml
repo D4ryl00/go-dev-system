@@ -1,6 +1,9 @@
 ---
 - name: Install golang
   apt:
-    name: ['golang-1.14', 'delve']
+    name: golang-1.14
     state: latest
   become: yes
+
+- name: Install Delve debugger
+  command: /usr/lib/go-1.14/bin/go get github.com/go-delve/delve/cmd/dlv
