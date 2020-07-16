@@ -11,7 +11,7 @@
     state: directory
 
 - name: copy .vimrc
-  copy: src=.vimrc dest=~/.vim/.vimrc
+  copy: src=.vimrc dest=~/.vimrc
 
 - name: "install vim plugin: vim-go"
   git:
