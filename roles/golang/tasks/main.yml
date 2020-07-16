@@ -1,6 +1,6 @@
 ---
 - name: Install golang
   apt:
-    name: golang-1.14
+    name: ['golang-1.14', 'delve']
     state: latest
   become: yes
