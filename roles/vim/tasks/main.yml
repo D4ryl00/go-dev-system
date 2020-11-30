@@ -33,6 +33,11 @@
     repo: https://github.com/tpope/vim-fugitive.git
     dest: ~/.vim/pack/dist/start/vim-fugitive
 
+- name: "install vim plugin: ale"
+  git:
+    repo: https://github.com/dense-analysis/ale.git
+    dest: ~/.vim/pack/plugins/start/ale
+
 - name: "finish vim plugin installation"
   command: vim -c GoInstallBinaries -c q
   changed_when: False

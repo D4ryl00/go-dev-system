@@ -23,6 +23,11 @@
 - name: "Copy .tmux"
   copy: src=.tmux.conf dest=~/.tmux.conf
 
+- name: "install tmux plugin manager: tpm"
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: ~/.tmux/plugins/tpm
+
 - name: add user to the docker group
   user:
     name: "{{ ansible_user }}"
